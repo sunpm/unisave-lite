@@ -1,4 +1,4 @@
-import { showToast } from '@/utils/uniTools'
+import { showToast } from './uniTools'
 
 // 表单校验
 export function validate(form, rules, cb) {
@@ -14,8 +14,9 @@ export function validate(form, rules, cb) {
           || (r.min && value.length < r.min)
           || (r.max && value.length > r.max)
           || (r.pattern && !new RegExp(r.pattern).test(value))
-        )
+        ) {
           return failValidate(r.message, cb, value, key)
+        }
       }
     }
   }

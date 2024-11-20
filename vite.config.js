@@ -1,12 +1,15 @@
 import { resolve } from 'node:path'
 import process from 'node:process'
-import { defineConfig, loadEnv } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
-import UnoCSS from 'unocss/vite'
-import UniPages from '@uni-helper/vite-plugin-uni-pages'
-import AutoImport from 'unplugin-auto-import/vite'
 import UniLayouts from '@uni-helper/vite-plugin-uni-layouts'
+import UniManifest from '@uni-helper/vite-plugin-uni-manifest'
+import UniPages from '@uni-helper/vite-plugin-uni-pages'
+import UnoCSS from 'unocss/vite'
+import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
+import { defineConfig, loadEnv } from 'vite'
+import vueDevTools from 'vite-plugin-vue-devtools'
+
 // https://vitejs.dev/config/
 export default defineConfig((configEnv) => {
   const viteEnv = loadEnv(configEnv.mode, process.cwd())
@@ -33,13 +36,17 @@ export default defineConfig((configEnv) => {
       },
     },
     plugins: [
+      vueDevTools(),
       /**
        * unocss
        * @see https://github.com/antfu/unocss
        * see unocss.config.ts for config
        */
       UnoCSS(),
-      UniPages(),
+      UniPages({
+        // 忽略页面内组件目录
+        exclude: ['**/components/**/*.*'],
+      }),
       /**
        * unplugin-auto-import 按需 import
        * @see https://github.com/antfu/unplugin-auto-import
@@ -56,6 +63,10 @@ export default defineConfig((configEnv) => {
           './src/stores',
         ],
         vueTemplate: true,
+        // eslint报错解决
+        eslintrc: {
+          enabled: true, // Default `false`
+        },
       }),
       /**
        * vite-plugin-uni-layouts
@@ -70,7 +81,16 @@ export default defineConfig((configEnv) => {
       Components({
         dts: 'src/components.d.ts',
       }),
+      UniManifest(),
       uni(),
+      { // 自定义插件禁用vite:vue插件的devToolsEnabled，强制编译 vue 模板时 inline 为 true
+        name: 'fix-vite-plugin-vue',
+        configResolved(config) {
+          const plugin = config.plugins.find(p => p.name === 'vite:vue')
+          if (plugin && plugin.api && plugin.api.options)
+            plugin.api.options.devToolsEnabled = false
+        },
+      },
     ],
     /**
      * Vitest

@@ -64,12 +64,12 @@ function sexSelect(e) {
   form1.value?.validateField('userInfo.sex')
 }
 
-// eslint-disable-next-line unused-imports/no-unused-vars
+// eslint-disable-next-line ts/no-unused-vars,unused-imports/no-unused-vars
 function groupChange(n) {
   // console.log('groupChange', n)
 }
 
-// eslint-disable-next-line unused-imports/no-unused-vars
+// eslint-disable-next-line unused-imports/no-unused-vars,ts/no-unused-vars
 function radioChange(n) {
   // console.log('radioChange', n)
 }

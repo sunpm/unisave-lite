@@ -32,8 +32,9 @@
     "navigationBarBackgroundColor": "#fff",
     "backgroundColor": "#fff",
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "vitesse-uniapp",
+    "navigationBarTitleText": "unisave-lite",
     "app-plus": {
+      "scrollIndicator": "none",
       "titleNView": false
     }
   },

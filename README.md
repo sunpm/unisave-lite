@@ -1,16 +1,18 @@
 <p align='center'>
-快速地<sup><em>vitesse-uniapp</em></sup> 创建 uniapp + vue3 应用
+拥抱 web 开发，拯救 uniapp。
 <br>
+基于Uniapp、Vue 3、pinia(且持久化保存)、Typescript、UnoCSS等主流技术开发的开箱即用模版，适配所有(app、mp、web)平台！！！
 </p>
 
 <br>
 
 <p align='center'>
-<a href="https://vitesse-uniapp-vue3.netlify.app/">🖥 在线预览</a>
+<a href="https://uni-save.netlify.app">🖥 在线预览</a>
+<a href="https://unisave-docs.netlify.app/">📖 阅读文档</a>
 </p>
 
 ## 平台兼容性
-在技术考量上，优先同时支持下列的平台，为兼容多个平台而舍弃一些实用的依赖插件。如发现下列平台环境开发编译出现问题，欢迎提 [issue](https://github.com/sunpm/vitesse-uniapp-vue3/issues/new) or [pr](https://github.com/sunpm/vitesse-uniapp-vue3/pulls)
+在技术考量上，优先同时支持下列的平台，为兼容多个平台而舍弃一些实用的依赖插件。如发现下列平台环境开发编译出现问题，欢迎提 [issue](https://github.com/sunpm/unisave-lite/issues/new) or [pr](https://github.com/sunpm/unisave-lite/pulls)
 
 | H5 | IOS  | 安卓 | 微信小程序 | 字节小程序 | 快手小程序 | 支付宝小程序 | 百度小程序 |
 |:--:| :--: | :--: | :--------: | :--------: | :--------: | :----------: | :----------: |
@@ -62,16 +64,25 @@
 - [ESLint](https://github.com/eslint/eslint) 配置为 [@antfu/eslint-config](https://github.com/antfu/eslint-config) - 单引号, 无分号...
   - [@unocss/eslint-config](https://unocss.dev/integrations/eslint) - 用于UnoCSS的ESLint配置
   - [@uni-helper/eslint-config](https://github.com/uni-helper/eslint-config) - 适用于 uni-app 的 Anthony's ESLint 配置预设
+
+### 各平台类型定义文件
+- [x] [uni-app 组件](https://www.npmjs.com/package/@uni-helper/uni-app-types)
+- [x] [微信小程序](https://www.npmjs.com/package/miniprogram-api-typings)
+- [x] [支付宝小程序](https://www.npmjs.com/package/@mini-types/alipay)
+- [x] [字节小程序](https://www.npmjs.com/package/@douyin-microapp/typings)
+- [x] [快手小程序](https://www.npmjs.com/package/ks-miniprogram-types/global)
+- [x] [百度小程序](https://www.npmjs.com/package/@types/baidu-app)
+
 ## 环境建议
 
 **Node >= 18**
 
-**pnpm >= 9**
+**pnpm >= 8**
 
 ## 使用该模版
 ```sh
-npx degit sunpm/vitesse-uniapp#main my-vitesse-uniapp
-cd my-vitesse-uniapp
+npx degit sunpm/unisave-lite#main my-unisave-lite
+cd my-unisave-lite
 pnpm install
 ```
 如果你没装过 pnpm, 可以先运行: `npm install -g pnpm`
@@ -84,7 +95,7 @@ pnpm install
 - [ ] 在 `manifest.config.ts` 中修改项目名称，描述，`appid` 等
 - [ ] 在 `.env.*` 更改环境变量
 - [ ] 不需要部署到 netlify 请移除 `.netlify.toml` 文件
-- [ ] 整理 README 并删除演示页面和组件 
+- [ ] 整理 README 并删除演示页面和组件
 
 紧接着, 享受吧 :)
 
@@ -99,5 +110,5 @@ pnpm install
 报错：`Uncaught SyntaxError: The requested module '/node_modules/vue-demi/lib/index.mjs?v=701bef9f' does not provide an export named 'hasInjectionContext'`
 > pinia v2.1.X 版本要求 vue 3.3 或者 vue-demi latest ，如果 uniapp 的 vue 版本是 ^3.2.45，通过 pinia 降级到 2.0.X 可以运行和使用。
 
-## ts 版本
-- [vitesse-uniapp-vue3](https://github.com/sunpm/vitesse-uniapp-vue3)
+## 参考
+- [unisave js 版本](https://github.com/sunpm/unisave)

@@ -13,9 +13,13 @@
     </div>
   </div>
   <p my-2>
-    <a icon-btn href="https://github.com/sunpm/vitesse-uniapp-vue3" target="_blank">vitesse-uniapp</a>
+    <a icon-btn href="https://github.com/sunpm/unisave-lite" target="_blank">
+      unisave-lite
+    </a>
   </p>
   <p>
-    <em text-sm italic op75>个人觉得有用的 uniapp + vue3 + unocss + vite 组合模版（主观拉满）</em>
+    <em text-sm italic op75>
+      个人觉得有用的 uniapp + vue3 + unocss + vite 组合模版（主观拉满）
+    </em>
   </p>
 </template>

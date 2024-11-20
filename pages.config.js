@@ -15,8 +15,9 @@ export default defineUniPages({
     'navigationBarBackgroundColor': '#fff',
     'backgroundColor': '#fff',
     'navigationBarTextStyle': 'black',
-    'navigationBarTitleText': 'vitesse-uniapp',
+    'navigationBarTitleText': 'unisave-lite',
     'app-plus': {
+      scrollIndicator: 'none', // 在APP平台都不显示滚动条
       titleNView: false, // 移除 H5、APP 顶部导航
     },
   },
