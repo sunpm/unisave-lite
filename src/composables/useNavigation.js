@@ -1,6 +1,6 @@
 /// <reference path="../../uni-pages"/>
 
-import { getPathQueryString } from '@/utils'
+import { objectToQueryString } from '@pmun/utils'
 import { useRouter } from '@uni-helper/uni-use'
 
 const { navigate, redirect } = useRouter()
@@ -12,8 +12,9 @@ export function useNavigation() {
    * @param [params]
    */
   function navigateTo(path, params) {
+    params = params ?? {}
     return navigate({
-      url: getPathQueryString(path, params),
+      url: path + (objectToQueryString(params) && `?${objectToQueryString(params)}`),
     })
   }
   /**
@@ -22,8 +23,9 @@ export function useNavigation() {
    * @param [params]
    */
   function redirectTo(path, params) {
+    params = params ?? {}
     return redirect({
-      url: getPathQueryString(path, params),
+      url: path + (objectToQueryString(params) && `?${objectToQueryString(params)}`),
     })
   }
   return {

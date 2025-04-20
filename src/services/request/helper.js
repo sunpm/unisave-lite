@@ -1,4 +1,4 @@
-import { isObject } from '@/utils'
+import { isObject } from '@pmun/utils'
 
 // 错误处理函数
 export function handleError(
