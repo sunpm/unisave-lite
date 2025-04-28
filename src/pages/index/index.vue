@@ -5,7 +5,7 @@ console.log(usePageScroll)
 </script>
 
 <template>
-  <view flex="~ col items-center justify-center" p-50px>
+  <view us-flex="~ col items-center justify-center" us-p-50px>
     <Logos />
     <InputEntry />
   </view>
