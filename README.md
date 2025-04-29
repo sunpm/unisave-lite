@@ -111,4 +111,4 @@ pnpm install
 > pinia v2.1.X 版本要求 vue 3.3 或者 vue-demi latest ，如果 uniapp 的 vue 版本是 ^3.2.45，通过 pinia 降级到 2.0.X 可以运行和使用。
 
 ## 参考
-- [unisave js 版本](https://github.com/sunpm/unisave)
+- [unisave ts 版本](https://github.com/sunpm/unisave)
